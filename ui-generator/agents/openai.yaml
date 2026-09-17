@@ -1,0 +1,12 @@
+interface:
+  display_name: UI生成skill
+  short_description: 基于 design-md 规范与 SupervisionPlatform 校准事实生成高一致性的业务应用 UI
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true

@@ -1,0 +1,50 @@
+{
+  "name": "ui-generator",
+  "version": "1.0.0",
+  "displayName": "UI Generator - SupervisionPlatform Style",
+  "description": "基于 design-md v2 规范与 SupervisionPlatform 项目生成企业级业务应用UI",
+  "author": "Design System Team",
+  "repository": {
+    "design-spec": "https://github.com/wangb1996/design-md",
+    "design-branch": "agent/design-md-v2-self-contained",
+    "project-repo": "https://github.com/songluo-ctyl/SupervisionPlatform",
+    "project-branch": "main"
+  },
+  "lastUpdated": "2026-09-17",
+  "updatePolicy": {
+    "autoUpdate": true,
+    "updateInterval": "daily",
+    "updateTime": "02:00"
+  },
+  "dependencies": {
+    "github-api": "^1.0.0"
+  },
+  "skills": [
+    {
+      "name": "ui-generator",
+      "entrypoint": "ui-generator/SKILL.md",
+      "triggers": [
+        "生成UI",
+        "创建页面",
+        "按规范生成",
+        "SupervisionPlatform风格"
+      ]
+    }
+  ],
+  "references": [
+    "ui-generator/references/source-map.md",
+    "ui-generator/references/core-normative-baseline.md",
+    "ui-generator/references/project-calibration.md",
+    "ui-generator/references/conflicts-and-precedence.md",
+    "ui-generator/references/component-routing.md",
+    "ui-generator/references/page-type-routing.md",
+    "ui-generator/references/navigation-action-panels.md",
+    "ui-generator/references/acceptance-gate.md",
+    "ui-generator/references/visual-reference-index.md"
+  ],
+  "hooks": {
+    "preUpdate": "scripts/pre-update.sh",
+    "postUpdate": "scripts/post-update.sh",
+    "validate": "scripts/validate.sh"
+  }
+}
