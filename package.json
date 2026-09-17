@@ -1,0 +1,29 @@
+{
+  "name": "ui-generator-plugin",
+  "version": "1.0.0",
+  "description": "UI Generator Plugin for SupervisionPlatform based on design-md v2 specification",
+  "main": "ui-generator/SKILL.md",
+  "scripts": {
+    "update": "bash scripts/update.sh",
+    "validate": "bash scripts/validate.sh",
+    "pre-update": "bash scripts/pre-update.sh",
+    "post-update": "bash scripts/post-update.sh"
+  },
+  "keywords": [
+    "ui-generator",
+    "design-system",
+    "claude-plugin",
+    "claude-skill",
+    "enterprise-ui"
+  ],
+  "author": "Design System Team",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wangb1996/ui-generator.git"
+  },
+  "bugs": {
+    "url": "https://github.com/wangb1996/ui-generator/issues"
+  },
+  "homepage": "https://github.com/wangb1996/ui-generator#readme"
+}
