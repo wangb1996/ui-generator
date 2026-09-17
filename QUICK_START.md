@@ -4,30 +4,18 @@
 
 ## 📦 安装
 
-### 选项 1: 直接克隆
+### 在 Codex 中使用
 
 ```bash
-# 克隆到 Claude 插件目录
-git clone https://github.com/your-org/ui-generator-plugin.git ~/.claude/plugins/ui-generator
+# 克隆插件源码
+git clone https://github.com/wangb1996/ui-generator.git
+cd ui-generator
 
-# 或克隆到自定义位置
-git clone https://github.com/your-org/ui-generator-plugin.git
-cd ui-generator-plugin
-```
-
-### 选项 2: 下载压缩包
-
-1. 下载最新版本: [Releases](https://github.com/your-org/ui-generator-plugin/releases)
-2. 解压到 `~/.claude/plugins/ui-generator`
-
-### 验证安装
-
-```bash
-cd ui-generator-plugin
+# 验证 Codex 插件包
 ./scripts/validate.sh
 ```
 
-看到 ✅ 表示安装成功！
+Codex 会从 `.codex-plugin/plugin.json` 发现插件，并从 `skills/ui-generator/` 加载 Skill。
 
 ## 🎯 第一个页面
 
@@ -69,15 +57,9 @@ cd ui-generator-plugin
 
 ## 🛠️ 基本用法
 
-### 在 Claude 中使用
+### 在 Codex 中使用
 
-**方法 1: 通过技能名称**
-
-```
-/ui-generator 生成一个工作台页面
-```
-
-**方法 2: 自然语言触发**
+**自然语言触发**
 
 只需在对话中提到关键词：
 - "按规范生成"
@@ -142,26 +124,9 @@ cd ui-generator-plugin
 
 ## ⚙️ 配置
 
-### 自定义更新策略
-
-编辑 `plugin.json`：
-
-```json
-{
-  "updatePolicy": {
-    "autoUpdate": true,
-    "updateInterval": "weekly",
-    "updateTime": "02:00"
-  }
-}
-```
-
-可选值：
-- `updateInterval`: `"daily"` | `"weekly"` | `"monthly"` | `"manual"`
-
 ### 添加项目校准规则
 
-编辑 `ui-generator/references/project-calibration.md`，添加你的项目特定规则。
+编辑 `skills/ui-generator/references/project-calibration.md`，添加你的项目特定规则。
 
 ## 🔄 更新插件
 
@@ -220,8 +185,8 @@ git clone --branch agent/design-md-v2-self-contained \
 ### 推荐阅读顺序
 
 1. [README.md](./README.md) - 完整功能说明
-2. [ui-generator/SKILL.md](./ui-generator/SKILL.md) - 技能定义
-3. [ui-generator/references/source-map.md](./ui-generator/references/source-map.md) - 知识来源
+2. [skills/ui-generator/SKILL.md](./skills/ui-generator/SKILL.md) - 技能定义
+3. [skills/ui-generator/references/source-map.md](./skills/ui-generator/references/source-map.md) - 知识来源
 4. [CONTRIBUTING.md](./CONTRIBUTING.md) - 参与贡献
 
 ### 核心概念

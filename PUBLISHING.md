@@ -8,7 +8,7 @@
 
 - [ ] 所有测试通过 (`./scripts/validate.sh`)
 - [ ] 文档已更新（README.md, CHANGELOG.md）
-- [ ] 版本号已更新（plugin.json, package.json）
+- [ ] 版本号已更新（.codex-plugin/plugin.json, package.json）
 - [ ] 上游仓库已同步到最新
 - [ ] Git 提交历史清晰
 - [ ] LICENSE 文件存在
@@ -31,7 +31,7 @@ npm version major
 ```
 
 或手动更新：
-1. 修改 `plugin.json` 的 `version` 字段
+1. 修改 `.codex-plugin/plugin.json` 的 `version` 字段
 2. 修改 `package.json` 的 `version` 字段
 3. 更新 `CHANGELOG.md`
 
@@ -57,9 +57,9 @@ git push origin v1.0.0
 ```bash
 # 创建分发包
 tar -czf ui-generator-plugin-v1.0.0.tar.gz \
-  ui-generator/ \
+  .codex-plugin/ \
+  skills/ \
   scripts/ \
-  plugin.json \
   package.json \
   README.md \
   LICENSE \

@@ -18,17 +18,17 @@ errors=0
 # 1. 检查必需文件
 echo "1️⃣ 检查必需文件..."
 required_files=(
-    "plugin.json"
-    "ui-generator/SKILL.md"
-    "ui-generator/references/source-map.md"
-    "ui-generator/references/core-normative-baseline.md"
-    "ui-generator/references/project-calibration.md"
-    "ui-generator/references/conflicts-and-precedence.md"
-    "ui-generator/references/component-routing.md"
-    "ui-generator/references/page-type-routing.md"
-    "ui-generator/references/navigation-action-panels.md"
-    "ui-generator/references/acceptance-gate.md"
-    "ui-generator/references/visual-reference-index.md"
+    ".codex-plugin/plugin.json"
+    "skills/ui-generator/SKILL.md"
+    "skills/ui-generator/references/source-map.md"
+    "skills/ui-generator/references/core-normative-baseline.md"
+    "skills/ui-generator/references/project-calibration.md"
+    "skills/ui-generator/references/conflicts-and-precedence.md"
+    "skills/ui-generator/references/component-routing.md"
+    "skills/ui-generator/references/page-type-routing.md"
+    "skills/ui-generator/references/navigation-action-panels.md"
+    "skills/ui-generator/references/acceptance-gate.md"
+    "skills/ui-generator/references/visual-reference-index.md"
 )
 
 for file in "${required_files[@]}"; do
@@ -42,9 +42,9 @@ done
 
 # 2. 检查 JSON 格式
 echo ""
-echo "2️⃣ 检查 plugin.json 格式..."
+echo "2️⃣ 检查 Codex 插件 manifest 格式..."
 if command -v jq &> /dev/null; then
-    if jq empty "$PLUGIN_DIR/plugin.json" 2>/dev/null; then
+    if jq empty "$PLUGIN_DIR/.codex-plugin/plugin.json" 2>/dev/null; then
         echo -e "  ${GREEN}✓${NC} JSON 格式正确"
     else
         echo -e "  ${RED}✗${NC} JSON 格式错误"
@@ -57,7 +57,7 @@ fi
 # 3. 检查 SKILL.md 结构
 echo ""
 echo "3️⃣ 检查 SKILL.md 结构..."
-skill_file="$PLUGIN_DIR/ui-generator/SKILL.md"
+skill_file="$PLUGIN_DIR/skills/ui-generator/SKILL.md"
 if grep -q "^---$" "$skill_file" && grep -q "^name:" "$skill_file" && grep -q "^description:" "$skill_file"; then
     echo -e "  ${GREEN}✓${NC} Frontmatter 格式正确"
 else
@@ -78,9 +78,9 @@ fi
 # 5. 统计文件大小
 echo ""
 echo "5️⃣ 文件统计..."
-total_size=$(du -sh "$PLUGIN_DIR/ui-generator" | cut -f1)
+total_size=$(du -sh "$PLUGIN_DIR/skills/ui-generator" | cut -f1)
 echo "  总大小: $total_size"
-file_count=$(find "$PLUGIN_DIR/ui-generator" -type f | wc -l)
+file_count=$(find "$PLUGIN_DIR/skills/ui-generator" -type f | wc -l)
 echo "  文件数: $file_count"
 
 # 总结

@@ -1,8 +1,8 @@
 {
   "name": "ui-generator-plugin",
   "version": "1.0.0",
-  "description": "UI Generator Plugin for SupervisionPlatform based on design-md v2 specification",
-  "main": "ui-generator/SKILL.md",
+  "description": "Codex plugin for generating SupervisionPlatform-style enterprise UI",
+  "main": "skills/ui-generator/SKILL.md",
   "scripts": {
     "update": "bash scripts/update.sh",
     "validate": "bash scripts/validate.sh",
@@ -12,8 +12,8 @@
   "keywords": [
     "ui-generator",
     "design-system",
-    "claude-plugin",
-    "claude-skill",
+    "codex-plugin",
+    "codex-skill",
     "enterprise-ui"
   ],
   "author": "Design System Team",

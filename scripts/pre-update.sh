@@ -17,7 +17,7 @@ fi
 # 备份当前版本
 BACKUP_DIR=".backups/$(date +%Y%m%d_%H%M%S)"
 mkdir -p "$BACKUP_DIR"
-cp -r ui-generator "$BACKUP_DIR/"
+cp -r skills/ui-generator "$BACKUP_DIR/"
 echo "✓ 当前版本已备份到: $BACKUP_DIR"
 
 exit 0

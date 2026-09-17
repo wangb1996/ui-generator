@@ -73,7 +73,7 @@ if [ -f "$TEMP_DIR/design-md/GENERATIVE-SPEC.md" ]; then
     # 提取关键内容并更新 core-normative-baseline.md
     node "$SCRIPT_DIR/extractors/extract-normative.js" \
         "$TEMP_DIR/design-md" \
-        "$PLUGIN_DIR/ui-generator/references/core-normative-baseline.md"
+        "$PLUGIN_DIR/skills/ui-generator/references/core-normative-baseline.md"
     log_info "✓ 核心规范基线已更新"
 else
     log_error "未找到 GENERATIVE-SPEC.md"
@@ -84,7 +84,7 @@ log_info "正在更新项目校准事实..."
 if [ -d "$TEMP_DIR/SupervisionPlatform/apps/web/src" ]; then
     node "$SCRIPT_DIR/extractors/extract-calibration.js" \
         "$TEMP_DIR/SupervisionPlatform" \
-        "$PLUGIN_DIR/ui-generator/references/project-calibration.md"
+        "$PLUGIN_DIR/skills/ui-generator/references/project-calibration.md"
     log_info "✓ 项目校准事实已更新"
 else
     log_error "未找到项目源码目录"
@@ -102,14 +102,6 @@ if [ -d "$TEMP_DIR/SupervisionPlatform/.git" ]; then
     PROJECT_COMMIT=$(cd "$TEMP_DIR/SupervisionPlatform" && git rev-parse HEAD)
     PROJECT_DATE=$(cd "$TEMP_DIR/SupervisionPlatform" && git log -1 --format=%cd --date=short)
     log_info "  SupervisionPlatform: $PROJECT_COMMIT ($PROJECT_DATE)"
-fi
-
-# 6. 更新 plugin.json 的 lastUpdated 字段
-CURRENT_DATE=$(date +%Y-%m-%d)
-if command -v jq &> /dev/null; then
-    jq --arg date "$CURRENT_DATE" '.lastUpdated = $date' "$PLUGIN_DIR/plugin.json" > "$PLUGIN_DIR/plugin.json.tmp"
-    mv "$PLUGIN_DIR/plugin.json.tmp" "$PLUGIN_DIR/plugin.json"
-    log_info "✓ 插件元数据已更新"
 fi
 
 log_info "✅ 更新完成！"

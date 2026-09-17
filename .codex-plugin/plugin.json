@@ -1,0 +1,38 @@
+{
+  "name": "ui-generator",
+  "version": "1.0.0",
+  "description": "Generate enterprise business application UI aligned with the SupervisionPlatform design system.",
+  "author": {
+    "name": "wangb1996",
+    "url": "https://github.com/wangb1996"
+  },
+  "homepage": "https://github.com/wangb1996/ui-generator",
+  "repository": "https://github.com/wangb1996/ui-generator",
+  "license": "MIT",
+  "keywords": [
+    "ui-generator",
+    "design-system",
+    "enterprise-ui",
+    "supervision-platform"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "UI Generator",
+    "shortDescription": "按 SupervisionPlatform 风格生成业务应用 UI",
+    "longDescription": "根据设计规范和项目校准事实，生成、改造和审查高一致性的企业级业务应用界面。",
+    "developerName": "wangb1996",
+    "category": "Productivity",
+    "capabilities": [
+      "Interactive",
+      "Write"
+    ],
+    "defaultPrompt": [
+      "按 SupervisionPlatform 风格生成资产管理台账页面。",
+      "为设备管理系统创建工作台和模块导航。",
+      "审查这个业务页面是否符合设计规范。"
+    ],
+    "brandColor": "#0071E3",
+    "composerIcon": "./skills/ui-generator/assets/icon.svg",
+    "logo": "./skills/ui-generator/assets/icon.svg"
+  }
+}
